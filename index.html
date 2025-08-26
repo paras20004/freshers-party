@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freshers Party 🎉</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freshers After Party 🎉</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>🎊 Freshers Party 2025 🎊</h1>
-    <p class="subtitle">Get your passes before they sell out!</p>
-
-  <div class="ticket-box">
-  <h3>🎫 Early Bird</h3>
-  <p>₹1799 | Only <span id="early-count">50</span> tickets left!</p>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeczxlA-S_NQeZ8wRRNaJuphtgrFPA6X6MNK8n4PD-wkgxQDA/viewform?usp=header" 
-     target="_blank" class="btn">Grab Now</a>
-</div>
-
-
-      <div class="ticket-card">
-        <h2>Couple Pass</h2>
-        <p>Price: ₹3199</p>
-        <p>Remaining: <span id="couple-count">30</span></p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeczxlA-S_NQeZ8wRRNaJuphtgrFPA6X6MNK8n4PD-wkgxQDA/viewform?usp=header" target="_blank" class="btn">Book Now</a>
-      </div>
-
-      <div class="ticket-card">
-        <h2>Phase 1</h2>
-        <p>Price: ₹1999</p>
-        <p>Remaining: <span id="phase-count">100</span></p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeczxlA-S_NQeZ8wRRNaJuphtgrFPA6X6MNK8n4PD-wkgxQDA/viewform?usp=header" target="_blank" class="btn">Book Now</a>
-      </div>
-    </div>
+  <div class="hero">
+    <h1>🔥 Freshers’ After Party 2025 🔥</h1>
+    <p class="tagline">Not just an after party… it’s the beginning of your journey!</p>
+    <a href="#tickets" class="btn">Book Tickets 🎟️</a>
   </div>
+
+  <section id="tickets" class="tickets">
+    <h2>Choose Your Ticket</h2>
+    <div class="ticket-box">
+      <h3>🎫 Early Bird</h3>
+      <p>₹1799 | Only <span id="early-count">50</span> tickets!</p>
+      <button onclick="buyTicket('Early Bird')">Grab Now</button>
+    </div>
+    <div class="ticket-box">
+      <h3>🎉 Phase 1</h3>
+      <p>₹1999 | Available after Early Bird closes</p>
+      <button onclick="buyTicket('Phase 2')">Book Now</button>
+    </div>
+    <div class="ticket-box">
+      <h3>❤️ Couple Pass</h3>
+      <p>₹3199 | For 2 people</p>
+      <button onclick="buyTicket('Couple Pass')">Book Now</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>✨ Organized for freshers✨</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
