@@ -8,24 +8,34 @@
 </head>
 <body>
   <div class="hero">
-    <h1>Freshers' After Party 🎶✨</h1>
-    <p>Not just a party, it’s the beginning of your journey!</p>
-    <a href="#tickets" class="btn">Grab Your Tickets 🎟️</a>
+    <h1>🔥 Freshers’ After Party 2025 🔥</h1>
+    <p class="tagline">Not just an after party… it’s the beginning of your journey!</p>
+    <a href="#tickets" class="btn">Book Tickets 🎟️</a>
   </div>
 
   <section id="tickets" class="tickets">
     <h2>Choose Your Ticket</h2>
-    <form id="ticketForm">
-      <label><input type="radio" name="ticket" value="Early Bird" /> Early Bird (₹199) - Limited 50</label><br/>
-      <label><input type="radio" name="ticket" value="Phase 2" /> Phase 2 (₹299)</label><br/>
-      <label><input type="radio" name="ticket" value="Couple" /> Couple (₹499)</label><br/>
-      <button type="submit" class="btn">Book Now</button>
-    </form>
+    <div class="ticket-box">
+      <h3>🎫 Early Bird</h3>
+      <p>₹1799 | Only <span id="early-count">50</span> tickets!</p>
+      <button onclick="buyTicket('Early Bird')">Grab Now</button>
+    </div>
+    <div class="ticket-box">
+      <h3>🎉 Phase 1</h3>
+      <p>₹1999 | Available after Early Bird closes</p>
+      <button onclick="buyTicket('Phase 2')">Book Now</button>
+    </div>
+    <div class="ticket-box">
+      <h3>❤️ Couple Pass</h3>
+      <p>₹3199 | For 2 people</p>
+      <button onclick="buyTicket('Couple Pass')">Book Now</button>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 Freshers Party Committee | All Rights Reserved</p>
+    <p>✨ Organized for freshers✨</p>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
