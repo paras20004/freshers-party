@@ -1,17 +1,18 @@
-let earlyCount = 50;
+async function updateCounts() {
+  try {
+    const res = await fetch("PASTE_YOUR_APPS_SCRIPT_URL_HERE");
+    const data = await res.json();
 
-function buyTicket(type) {
-  if (type === "Early Bird") {
-    if (earlyCount > 0) {
-      earlyCount--;
-      document.getElementById("early-count").innerText = earlyCount;
-      alert("🎉 You selected " + type + " ticket! Fill the form to continue.");
-      window.open("https://docs.google.com/forms/d/e/1FAIpQLSeczxlA-S_NQeZ8wRRNaJuphtgrFPA6X6MNK8n4PD-wkgxQDA/viewform?usp=header", "_blank");
-    } else {
-      alert("❌ Early Bird tickets are sold out. Try Phase 2!");
-    }
-  } else {
-    alert("🎉 You selected " + type + " ticket! Fill the form to continue.");
-    window.open("https://docs.google.com/forms/d/e/1FAIpQLSeczxlA-S_NQeZ8wRRNaJuphtgrFPA6X6MNK8n4PD-wkgxQDA/viewform?usp=header", "_blank");
+    document.getElementById("early-count").innerText = Math.max(data.early, 0);
+    document.getElementById("couple-count").innerText = Math.max(data.couple, 0);
+    document.getElementById("phase-count").innerText = Math.max(data.phase, 0);
+  } catch (e) {
+    console.error("Error fetching ticket data:", e);
   }
 }
+
+// Run once on load
+updateCounts();
+
+// Refresh every 10 seconds
+setInterval(updateCounts, 10000);
