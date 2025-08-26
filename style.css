@@ -1,0 +1,113 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2820
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 body \{\
+  margin: 0;\
+  font-family: 'Poppins', sans-serif;\
+  background: #0a0a0a;\
+  color: #fff;\
+  text-align: center;\
+\}\
+\
+.hero \{\
+  height: 100vh;\
+  display: flex;\
+  flex-direction: column;\
+  justify-content: center;\
+  align-items: center;\
+  background: linear-gradient(135deg, #ff00cc, #3333ff);\
+  color: white;\
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);\
+\}\
+\
+.hero h1 \{\
+  font-size: 3rem;\
+  animation: glow 1.5s infinite alternate;\
+\}\
+\
+@keyframes glow \{\
+  from \{ text-shadow: 0 0 10px #ff00ff; \}\
+  to \{ text-shadow: 0 0 20px #00ffff; \}\
+\}\
+\
+.tagline \{\
+  font-size: 1.2rem;\
+  margin: 10px 0 20px;\
+\}\
+\
+.btn \{\
+  padding: 15px 30px;\
+  font-size: 1.2rem;\
+  color: white;\
+  background: #ff0077;\
+  border: none;\
+  border-radius: 30px;\
+  text-decoration: none;\
+  transition: 0.3s;\
+  box-shadow: 0 0 15px #ff0077;\
+\}\
+\
+.btn:hover \{\
+  background: #00ccff;\
+  box-shadow: 0 0 25px #00ccff;\
+\}\
+\
+.tickets \{\
+  padding: 50px 20px;\
+  background: #111;\
+\}\
+\
+.tickets h2 \{\
+  font-size: 2rem;\
+  margin-bottom: 30px;\
+\}\
+\
+.ticket-box \{\
+  display: inline-block;\
+  width: 250px;\
+  background: #1a1a1a;\
+  margin: 15px;\
+  padding: 20px;\
+  border-radius: 15px;\
+  box-shadow: 0 0 15px rgba(255, 0, 150, 0.5);\
+  transition: transform 0.3s;\
+\}\
+\
+.ticket-box:hover \{\
+  transform: scale(1.05);\
+\}\
+\
+.ticket-box h3 \{\
+  font-size: 1.5rem;\
+  color: #ff33cc;\
+\}\
+\
+.ticket-box button \{\
+  margin-top: 15px;\
+  padding: 10px 20px;\
+  font-size: 1rem;\
+  background: #ff0077;\
+  color: #fff;\
+  border: none;\
+  border-radius: 20px;\
+  cursor: pointer;\
+  transition: 0.3s;\
+\}\
+\
+.ticket-box button:hover \{\
+  background: #00ccff;\
+  box-shadow: 0 0 20px #00ccff;\
+\}\
+\
+footer \{\
+  margin-top: 50px;\
+  padding: 20px;\
+  background: #000;\
+  font-size: 0.9rem;\
+  color: #aaa;\
+\}\
+}
