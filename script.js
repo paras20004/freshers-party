@@ -1,6 +1,6 @@
 async function updateCounts() {
   try {
-    const res = await fetch("PASTE_YOUR_APPS_SCRIPT_URL_HERE");
+    const res = await fetch("https://script.google.com/macros/s/AKfycbxcoRx9qis_iOPNMIA_rqWewaQm8OPOBGO1BRBCURA4ytMRsNnvLpMYa7mYCCOo3P5Z/exec");
     const data = await res.json();
 
     document.getElementById("early-count").innerText = Math.max(data.early, 0);
