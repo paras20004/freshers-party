@@ -1,64 +1,105 @@
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  background: #0a0a0a;
   color: #fff;
   text-align: center;
 }
 
-.container {
-  padding: 40px;
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #ffdf6c;
-}
-
-.tickets {
+.hero {
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  align-items: center;
+  background: linear-gradient(135deg, #ff00cc, #3333ff);
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
 
-.ticket-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  padding: 20px;
-  width: 250px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
+.hero h1 {
+  font-size: 3rem;
+  animation: glow 1.5s infinite alternate;
 }
 
-.ticket-card:hover {
-  transform: scale(1.05);
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff00ff; }
+  to { text-shadow: 0 0 20px #00ffff; }
 }
 
-.ticket-card h2 {
-  margin-bottom: 10px;
-  color: #ffdf6c;
+.tagline {
+  font-size: 1.2rem;
+  margin: 10px 0 20px;
 }
 
 .btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #ff4c60;
-  color: #fff;
-  text-decoration: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: white;
+  background: #ff0077;
+  border: none;
   border-radius: 30px;
-  font-weight: bold;
+  text-decoration: none;
   transition: 0.3s;
+  box-shadow: 0 0 15px #ff0077;
 }
 
 .btn:hover {
-  background: #ff1e42;
+  background: #00ccff;
+  box-shadow: 0 0 25px #00ccff;
+}
+
+.tickets {
+  padding: 50px 20px;
+  background: #111;
+}
+
+.tickets h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.ticket-box {
+  display: inline-block;
+  width: 250px;
+  background: #1a1a1a;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 0, 150, 0.5);
+  transition: transform 0.3s;
+}
+
+.ticket-box:hover {
+  transform: scale(1.05);
+}
+
+.ticket-box h3 {
+  font-size: 1.5rem;
+  color: #ff33cc;
+}
+
+.ticket-box button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: #ff0077;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ticket-box button:hover {
+  background: #00ccff;
+  box-shadow: 0 0 20px #00ccff;
+}
+
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  background: #000;
+  font-size: 0.9rem;
+  color: #aaa;
 }
