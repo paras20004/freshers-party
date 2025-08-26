@@ -1,18 +1,12 @@
-async function updateCounts() {
+async function fetchTicketCount() {
   try {
-    const res = await fetch(https://script.google.com/macros/s/AKfycbzP8P83jnCzVy1rEkt8fQhp0qgPashtGXSVnP5TbZQ6Wa8HHb0_A6JxTGWUrSSjPLKZ/exec);
-    const data = await res.json();
-
-    document.getElementById("early-count").innerText = Math.max(data.early, 0);
-    document.getElementById("couple-count").innerText = Math.max(data.couple, 0);
-    document.getElementById("phase-count").innerText = Math.max(data.phase, 0);
-  } catch (e) {
-    console.error("Error fetching ticket data:", e);
+    const response = await fetch("https://script.google.com/macros/s/AKfycbwsXRqOt40UQyHhao6rovewNmLzlx7B1OuJy1dEkc_Ekh0S2YvfkSs7pHQ_zmVZpUzO/exec");
+    const data = await response.json();
+    document.getElementById("early-count").innerText = data.remaining;
+  } catch (error) {
+    console.error("Error fetching ticket count:", error);
   }
 }
 
-// Run once on load
-updateCounts();
-
-// Refresh every 10 seconds
-setInterval(updateCounts, 10000);
+setInterval(fetchTicketCount, 5000); // auto refresh every 5 seconds
+fetchTicketCount();
