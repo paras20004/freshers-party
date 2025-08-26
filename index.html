@@ -15,25 +15,28 @@
 
   <section id="tickets" class="tickets">
     <h2>Choose Your Ticket</h2>
+
     <div class="ticket-box">
       <h3>🎫 Early Bird</h3>
-      <p>₹1799 | Only <span id="early-count">50</span> tickets!</p>
-      <button onclick="buyTicket('Early Bird')">Grab Now</button>
+      <p>₹1799 | Only <span id="early-count">50</span> left!</p>
+      <button id="early-btn" onclick="buyTicket('early')">Grab Now</button>
     </div>
+
     <div class="ticket-box">
       <h3>🎉 Phase 1</h3>
       <p>₹1999 | Available after Early Bird closes</p>
-      <button onclick="buyTicket('Phase 2')">Book Now</button>
+      <button id="phase-btn" onclick="buyTicket('phase')" disabled>Book Now</button>
     </div>
+
     <div class="ticket-box">
       <h3>❤️ Couple Pass</h3>
       <p>₹3199 | For 2 people</p>
-      <button onclick="buyTicket('Couple Pass')">Book Now</button>
+      <button onclick="buyTicket('couple')">Book Now</button>
     </div>
   </section>
 
   <footer>
-    <p>✨ Organized for freshers✨</p>
+    <p>✨ Organized for Freshers ✨</p>
   </footer>
 
   <script src="script.js"></script>
