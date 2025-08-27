@@ -1,17 +1,25 @@
-let earlyCount = 50;
+// Countdown Timer
+const countdown = document.getElementById("countdown");
 
-function buyTicket(type) {
-  if (type === "Early Bird") {
-    if (earlyCount > 0) {
-      earlyCount--;
-      document.getElementById("early-count").innerText = earlyCount;
-      alert("🎉 You selected " + type + " ticket! Fill the form to continue.");
-      window.open("https://docs.google.com/forms/d/e/1FAIpQLSeczxlA-S_NQeZ8wRRNaJuphtgrFPA6X6MNK8n4PD-wkgxQDA/viewform?usp=header", "_blank");
-    } else {
-      alert("❌ Early Bird tickets are sold out. Try Phase 2!");
-    }
-  } else {
-    alert("🎉 You selected " + type + " ticket! Fill the form to continue.");
-    window.open("https://docs.google.com/forms/d/e/1FAIpQLSeczxlA-S_NQeZ8wRRNaJuphtgrFPA6X6MNK8n4PD-wkgxQDA/viewform?usp=header", "_blank");
+// Target Date -> 28 Aug 2025, 12 PM
+const eventDate = new Date("Aug 28, 2025 12:00:00").getTime();
+
+const interval = setInterval(() => {
+  const now = new Date().getTime();
+  const distance = eventDate - now;
+
+  if (distance < 0) {
+    clearInterval(interval);
+    countdown.innerHTML = "🚀 It's Party Time! 🎉";
+    return;
   }
-}
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}, 1000);
