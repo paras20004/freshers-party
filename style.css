@@ -1,104 +1,25 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+// Countdown Timer
+const countdown = document.getElementById("countdown");
 
-body {
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background: linear-gradient(135deg, #000000, #2b0057, #5e00a0);
-  text-align: center;
-  overflow-x: hidden;
-}
+// Target Date -> 28 Aug 2025, 12 PM
+const eventDate = new Date("Aug 28, 2025 12:00:00").getTime();
 
-/* Hero Section */
-.hero {
-  padding: 4rem 2rem;
-  animation: fadeIn 2s ease-in-out;
-}
+const interval = setInterval(() => {
+  const now = new Date().getTime();
+  const distance = eventDate - now;
 
-.hero h1 {
-  font-size: 2.8rem;
-  text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff0099;
-  animation: glow 2s infinite alternate;
-}
+  if (distance < 0) {
+    clearInterval(interval);
+    countdown.innerHTML = "🚀 It's Party Time! 🎉";
+    return;
+  }
 
-.tagline {
-  margin-top: 1rem;
-  font-size: 1.3rem;
-  color: #ffe0ff;
-}
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-/* Countdown */
-.countdown {
-  margin-top: 2rem;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #00ffcc;
-  animation: pulse 1.5s infinite;
-}
-
-/* Packages Section */
-.packages {
-  padding: 3rem 1.5rem;
-}
-
-.packages h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #ffeb3b;
-  text-shadow: 0 0 15px #ff0099;
-}
-
-.package-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-
-.package-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.package-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #ff0099, 0 0 40px #00ffcc;
-}
-
-.package-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: #ff80ff;
-}
-
-/* Footer */
-footer {
-  margin-top: 3rem;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.5);
-  font-size: 0.9rem;
-  color: #aaa;
-}
-
-/* Animations */
-@keyframes glow {
-  from { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff0099; }
-  to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #ff00ff; }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+  countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}, 1000);
