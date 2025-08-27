@@ -1,105 +1,104 @@
-body {
+/* General Reset */
+* {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #0a0a0a;
-  color: #fff;
-  text-align: center;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #000000, #2b0057, #5e00a0);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
 .hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #ff00cc, #3333ff);
-  color: white;
-  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+  padding: 4rem 2rem;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  animation: glow 1.5s infinite alternate;
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 10px #ff00ff; }
-  to { text-shadow: 0 0 20px #00ffff; }
+  font-size: 2.8rem;
+  text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff0099;
+  animation: glow 2s infinite alternate;
 }
 
 .tagline {
-  font-size: 1.2rem;
-  margin: 10px 0 20px;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: #ffe0ff;
 }
 
-.btn {
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  color: white;
-  background: #ff0077;
-  border: none;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.3s;
-  box-shadow: 0 0 15px #ff0077;
-}
-
-.btn:hover {
-  background: #00ccff;
-  box-shadow: 0 0 25px #00ccff;
-}
-
-.tickets {
-  padding: 50px 20px;
-  background: #111;
-}
-
-.tickets h2 {
+/* Countdown */
+.countdown {
+  margin-top: 2rem;
   font-size: 2rem;
-  margin-bottom: 30px;
+  font-weight: bold;
+  color: #00ffcc;
+  animation: pulse 1.5s infinite;
 }
 
-.ticket-box {
-  display: inline-block;
-  width: 250px;
-  background: #1a1a1a;
-  margin: 15px;
-  padding: 20px;
+/* Packages Section */
+.packages {
+  padding: 3rem 1.5rem;
+}
+
+.packages h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffeb3b;
+  text-shadow: 0 0 15px #ff0099;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.package-card {
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255, 0, 150, 0.5);
-  transition: transform 0.3s;
-}
-
-.ticket-box:hover {
-  transform: scale(1.05);
-}
-
-.ticket-box h3 {
-  font-size: 1.5rem;
-  color: #ff33cc;
-}
-
-.ticket-box button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  background: #ff0077;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.ticket-box button:hover {
-  background: #00ccff;
-  box-shadow: 0 0 20px #00ccff;
+.package-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff0099, 0 0 40px #00ffcc;
 }
 
+.package-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #ff80ff;
+}
+
+/* Footer */
 footer {
-  margin-top: 50px;
-  padding: 20px;
-  background: #000;
+  margin-top: 3rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
   font-size: 0.9rem;
   color: #aaa;
+}
+
+/* Animations */
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff0099; }
+  to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #ff00ff; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
