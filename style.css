@@ -1,104 +1,123 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background: linear-gradient(135deg, #000000, #2b0057, #5e00a0);
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  background: #0d0d0d;
+  color: #e0e0e0;
   text-align: center;
   overflow-x: hidden;
 }
 
-/* Hero Section */
-.hero {
-  padding: 4rem 2rem;
-  animation: fadeIn 2s ease-in-out;
+/* Loading Screen */
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #0d0d0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1000;
 }
-
-.hero h1 {
-  font-size: 2.8rem;
-  text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff0099;
+#loading-screen h1 {
+  color: #ff4444;
+  font-size: 2.5rem;
   animation: glow 2s infinite alternate;
 }
+#loading-screen p {
+  color: #fff;
+  font-size: 1.2rem;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff0000; }
+  to { text-shadow: 0 0 20px #ff6666; }
+}
 
+/* Hero */
+.hero {
+  padding: 50px 20px;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
 .tagline {
-  margin-top: 1rem;
-  font-size: 1.3rem;
-  color: #ffe0ff;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 /* Countdown */
 .countdown {
-  margin-top: 2rem;
   font-size: 2rem;
-  font-weight: bold;
-  color: #00ffcc;
-  animation: pulse 1.5s infinite;
+  margin-bottom: 30px;
 }
 
-/* Packages Section */
+/* Packages */
 .packages {
-  padding: 3rem 1.5rem;
+  padding: 50px 20px;
 }
-
-.packages h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #ffeb3b;
-  text-shadow: 0 0 15px #ff0099;
-}
-
 .package-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
-
 .package-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: #1a1a1a;
   border-radius: 15px;
-  padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  padding: 20px;
+  transition: transform 0.3s;
 }
-
 .package-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #ff0099, 0 0 40px #00ffcc;
+  transform: translateY(-10px);
 }
-
-.package-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: #ff80ff;
+.book-btn {
+  background: #ff4444;
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s;
+}
+.book-btn:hover {
+  background: #ff6666;
+  transform: scale(1.05);
+}
+.price {
+  margin-top: 15px;
+  font-size: 1.5rem;
+  color: #ffcc00;
+  animation: drop 0.6s ease forwards;
+}
+@keyframes drop {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hidden {
+  display: none;
+}
+.pay-btn {
+  background: #ffcc00;
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s;
+}
+.pay-btn:hover {
+  background: #ffd633;
+  transform: scale(1.05);
 }
 
 /* Footer */
 footer {
-  margin-top: 3rem;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  background: #111;
+  color: #666;
   font-size: 0.9rem;
-  color: #aaa;
-}
-
-/* Animations */
-@keyframes glow {
-  from { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff0099; }
-  to { text-shadow: 0 0 20px #00ffcc, 0 0 40px #ff00ff; }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
